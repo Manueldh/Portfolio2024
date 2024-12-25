@@ -8,7 +8,9 @@
 
 @font-face {
     font-family: "Algem", sans-serif;
-    src: url(../fonts/Algem.ttf);
+    src: url(../fonts/algem-regular.woff) format(woff);
+    src: url(../fonts/algem-regular.woff2) format(woff2);
+    src: url(../fonts/algem-regular.ttf) format(truetype);
 }
 
 :root {
