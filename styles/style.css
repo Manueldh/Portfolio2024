@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Space Grotesk", sans-serif;
+}
+
+@font-face {
+    font-family: "Algem", sans-serif;
+    src: url(../fonts/Algem.ttf);
+}
+
+:root {
+    --beige: #EFE5D7;
+    --black-bg: #000000;
+}
+
+[data-theme="light"] {
+    --beige: #000000;
+    --black-bg: #EFE5D7;
+}
+
+
+body {
+    background-color: var(--black-bg); /* Zwarte achtergrondkleur */
+    background-image: 
+        linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
+        linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Grootte van de grid */
+    background-position: -1px 0;
+    color: var(--beige);
+}
+
+@media screen and (min-width: 1100px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+.wrapper{
+    max-width: 1800px;
+}
+
+
+
+.isLoading {
+    overflow: hidden;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+h1 {
+    font-family: "Algem", sans-serif;
+    text-transform: uppercase;
+    /* font-size: 4em; */
+    font-size: clamp(1.5rem, 5.1447vw + .463rem, 4rem);
+}
+
+h2 {
+    font-family: "dharma-gothic-m", sans-serif;
+    /* font-size: 5em; */
+    font-size: clamp(3rem, 6.4309vw + .5788rem, 5rem);
+}
+
+h3{
+    /* font-size: 1.5em; */
+    font-size: clamp(1rem, 1.2862vw + .6158rem, 1.5rem);
+    font-weight: 300;
+    opacity: .6;
+}
+
+h4 {
+    font-size: 3em;
+    font-weight: 400;
+}
+
+button {
+    padding: 1em 0em 1em 1em;
+    transition: all .5s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 4em;
+    opacity: 0;
+    transform: translateY(-100px);
+}
+nav ul{
+    display: flex;
+    gap: 4em;
+    font-size: 1.2em;  
+    list-style-type: none;
+}
+nav ul li{
+    transition: all .5s ease;
+}
+nav li:hover{
+    transform: scale(1.2);
+}
+
+footer {
+    padding: 10em 4em 20em 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+    gap: 1em;
+}
+
+footer a {
+    display: flex;
+    gap: 1em;
+    padding: 0;
+    text-transform: none;
+    transition: all .5s ease;
+}
+footer a:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+footer span {
+    text-decoration: underline;
+    text-underline-offset: .3em;
+}
+
+.linkIcon {
+    fill: var(--beige);
+    width: 2em;
+}
+
+a{
+    padding: 1em;
+    color: var(--beige);
+    text-decoration: none;
+    text-transform: lowercase;
+    font-weight: 300;
+    transform: scale(1);
+}
+
+#logo {
+    height: 1.5em;
+    fill: var(--beige);
+}
+#dark-mode {
+    height: 2em;
+    fill: var(--beige);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    padding: 4em;
+    opacity: 0;
+    transform: translateY(100%)
+}
+.hero h2 {
+    margin-left: auto;
+}
+.hero p {
+    opacity: .6;
+    min-width: 400px;
+    width: 25%;
+    margin-left: auto;
+    text-align: right;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--beige);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background-image: 
+        linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
+        linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Grootte van de grid */
+    background-position: -1px 0;
+}
+#loader-logo {
+    height: 6em;
+    fill: var(--black-bg);
+}
+.counter {
+    font-size: 7em;
+    font-weight: 700;
+    color: var(--black-bg);
+    position: absolute;
+    top: 60%;
+}
+
+.projects {
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.projects li {
+    list-style-type: none;
+}
+.projects a {
+    display: flex;
+    flex-direction: row;
+    text-transform: none;
+    align-items: center;
+    padding: 3em 0;
+
+    position: relative;
+}
+
+.projects li h3 {
+    margin-left: auto;
+}
+.projects img {
+    display: none;
+}
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: auto;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(.1);
+    transition: transform 1s ease;
+    z-index: 15;
+    visibility: hidden;
+    border-radius: .5em;
+}
+
+
+
+.about {
+    padding: 10em 4em 10em 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+}
+
+.about p {
+    /* font-size: 3em; */
+    font-size: clamp(1.5rem, 3.8585vw + .3473rem, 3rem);
+    z-index: 2;
+}
+
+.interactiveContainer {
+    position: relative;
+}
+.interactiveDot {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: var(--beige);
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    top: 7px;
+
+    animation: ScalingLoop 1.5s infinite;
+}
+#firstDot {
+    animation-delay: 0s;
+}
+
+#secondDot {
+    animation-delay: .15s; 
+}
+
+#thirdDot {
+    animation-delay: .3s; 
+}
+.interactiveCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.01);
+    width: fit-content;
+    height: fit-content;
+    visibility: hidden;
+    cursor: grab;
+    transition: visibility .7s ease, transform .7s ease;
+}
+.interactiveCard img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: .3em;
+}
+.interactiveDot:hover + .interactiveCard,
+.interactiveCard:hover {
+    visibility: visible;
+    z-index: 15;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes ScalingLoop {
+    0% {
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(.8);
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .hero, .projects, .about, footer {
+        padding: 2em;
+    }
+    .about, footer{
+        height: 50vh;
+    }
+}
