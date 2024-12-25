@@ -7,10 +7,11 @@
 }
 
 @font-face {
-    font-family: "Algem", sans-serif;
-    src: url(../fonts/algem-regular.woff) format(woff);
-    src: url(../fonts/algem-regular.woff2) format(woff2);
-    src: url(../fonts/algem-regular.ttf) format(truetype);
+    font-family: "Algem";
+    src: 
+        url(../fonts/algem-regular.woff) format(woff), 
+        url(../fonts/algem-regular.woff2) format(woff2),
+        url(../fonts/algem-regular.ttf) format(truetype);
 }
 
 :root {
