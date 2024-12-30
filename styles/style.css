@@ -13,7 +13,7 @@
         url(../fonts/algem-regular.woff2) format(woff2),
         url(../fonts/algem-regular.ttf) format(truetype);
 }
-
+ 
 :root {
     --beige: #EFE5D7;
     --black-bg: #000000;
