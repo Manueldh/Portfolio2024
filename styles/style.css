@@ -48,8 +48,6 @@ body {
     max-width: 1800px;
 }
 
-
-
 .isLoading {
     overflow: hidden;
 }
@@ -80,7 +78,8 @@ h3{
 }
 
 h4 {
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size: clamp(1.5rem, 3.8585vw + .3473rem, 3rem);
     font-weight: 400;
 }
 
@@ -96,11 +95,18 @@ button:hover {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 2em 4em;
     opacity: 0;
     transform: translateY(-100px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    gap: 4em;
 }
 nav ul{
     display: flex;
@@ -113,6 +119,24 @@ nav ul li{
 }
 nav li:hover{
     transform: scale(1.2);
+}
+.hamburgerMenu {
+    display: none;
+}
+
+.hamburgerMenu span {
+    display: block;
+    width: 2em;
+    height: 3px;
+    background-color: var(--beige);
+    margin: .5em;
+    transition: all .75s ease;
+}
+.hamburgerMenu span:nth-child(2) {
+    width: 1.7em;
+}
+.hamburgerMenu span:nth-child(3) {
+    width: 1.4em;
 }
 
 footer {
@@ -142,7 +166,8 @@ footer span {
 
 .linkIcon {
     fill: var(--beige);
-    width: 2em;
+    width: 1em;
+    margin-left: .25em;
 }
 
 a{
@@ -257,6 +282,7 @@ a{
 
 
 
+
 .about {
     padding: 10em 4em 10em 4em;
     display: flex;
@@ -314,12 +340,7 @@ a{
     object-fit: cover;
     border-radius: .3em;
 }
-.interactiveDot:hover + .interactiveCard,
-.interactiveCard:hover {
-    visibility: visible;
-    z-index: 15;
-    transform: translate(-50%, -50%) scale(1);
-}
+
 
 @keyframes ScalingLoop {
     0% {
@@ -335,11 +356,122 @@ a{
 
 
 
-@media only screen and (max-width: 600px) {
-    .hero, .projects, .about, footer {
+@media screen and (max-width: 1100px) {
+    .hero, .projects, .about, footer, header {
         padding: 2em;
     }
     .about, footer{
-        height: 50vh;
+        height: 60vh;
+    }
+
+    .projects img {
+        display: block;
+        width: 100%;
+    }
+    .projects li a{
+        flex-direction: column;
+        align-items: start;
+        gap: 1em;
+        padding: 2em 0;
+    }
+    .about p {
+        line-height: 170%;
+    }
+
+    /**************/
+    /* MENU */
+    /**************/
+  
+    header {
+        justify-content: space-between;
+    }
+
+    nav, nav ul {
+        display: none;
+        
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    nav {
+        transform: translateY(-100%);
+        transition: 1s all ease;
+    }
+    #darkModeBtn {
+        display: none;
+    }
+    
+    .hamburgerMenu {
+        display: block;
+        z-index: 10;
+        
+        /* position: absolute;
+        right: 4em;
+        top: 4em; */
+    }
+
+    .burgerActive {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--black-bg);
+        z-index: 100;
+        margin: 0;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        background-color: var(--black-bg); /* Zwarte achtergrondkleur */
+        background-image: 
+            linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
+            linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
+        background-size: 40px 40px; /* Grootte van de grid */
+        background-position: -1px 0;
+    }
+
+    .closeBtn {
+        position: absolute;
+        right: 4em;
+        top: 4em;
+    }
+
+    .closeBtn-dash1 {
+        transform: rotate(45deg) scale(1.2);
+        position: absolute;
+        top: 0; 
+        right: 0;
+    }
+    .closeBtn-dash2 {
+        width: 2em !important;
+        transform: rotate(135deg) scale(1.2);
+        position: absolute;
+        top: 0; 
+        right: 0;
+    }
+    .closeBtn-dash3 {
+        display: none !important;
     }
 }
+
+@media screen and (min-width: 1100px) {
+    .interactiveDot:hover + .interactiveCard,
+    .interactiveCard:hover {
+    visibility: visible;
+    z-index: 15;
+    transform: translate(-50%, -50%) scale(1);
+}
+}
+
+
+
+
+/* 
+TODO: 
+
+- Transition op menu
+- Menutekst groter maken bij hamburgervariant 
+
+
+*/
