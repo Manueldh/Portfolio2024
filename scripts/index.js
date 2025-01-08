@@ -49,8 +49,8 @@ if (!hasVisitedHome) {
     })
     .to(".loader",{
         height: 0,
-        duration: .8,
-        delay: .1,
+        duration: 1.5,
+        delay: .25,
         ease: Power4.easeInOut
     })
     .to("#loader-logo",{

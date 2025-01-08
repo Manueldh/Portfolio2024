@@ -548,7 +548,32 @@ a{
     .closeBtn-dash3 {
         display: none !important;
     }
+
+
+
+
+    .projectContainer {
+        width: 100%;
+        padding: 2em;
+    }
+    .projectContent {
+        align-items: center;
+        padding: 4em 0 8em 0;
+    }
+    .projectContent h3 {
+        width: 80%;
+    }
+    .textContainer {
+        padding: 6em 0 8em 0;
+    }
+
 }
+/* @media screen and (max-width: 600px) {
+   .imgContainer  {
+    display: flex;
+    flex-direction: column;
+   }
+} */
 
 @media screen and (min-width: 1100px) {
     .interactiveDot:hover + .interactiveCard,
