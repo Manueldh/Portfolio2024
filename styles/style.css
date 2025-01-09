@@ -104,54 +104,29 @@ button:hover {
 header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 2em 4em;
     opacity: 0;
-    /* transform: translateY(-100px); */
+    transition: top 0.3s;
 
-    transition: display .5s ease;
+    background-color: var(--black-bg); /* Zwarte achtergrondkleur */
+    background-image: 
+        linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
+        linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Grootte van de grid */
+    background-position: -1px 0;
 }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: auto;
-    gap: 4em;
-    transform: translateY(0);
-
-    transition: transform 0.5s ease, opacity 0.5s ease;
+header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-nav ul{
-    display: flex;
-    gap: 4em;
-    font-size: 1.2em;  
-    list-style-type: none;
-
-    transition: opacity 0.5s ease;
+header button {
+    padding: 0;
+    width: 4em;
 }
-nav ul li{
-    transition: all .5s ease;
-}
-nav li:hover{
-    transform: scale(1.2);
-}
-.hamburgerMenu {
+header button:first-of-type {
     display: none;
-}
-
-.hamburgerMenu span {
-    display: block;
-    width: 2em;
-    height: 3px;
-    background-color: var(--beige);
-    margin: .5em;
-    transition: all .75s ease;
-}
-.hamburgerMenu span:nth-child(2) {
-    width: 1.7em;
-}
-.hamburgerMenu span:nth-child(3) {
-    width: 1.4em;
 }
 
 footer {
@@ -199,6 +174,10 @@ a{
     fill: var(--beige);
 }
 #dark-mode {
+    height: 2em;
+    fill: var(--beige);
+}
+#backBtn {
     height: 2em;
     fill: var(--beige);
 }
@@ -488,77 +467,9 @@ a{
         justify-content: space-between;
     }
 
-    nav, nav ul {
-        display: none;
-        
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-    }
-    nav {
-        transform: translateY(-100%);
-        transition: 1s all ease;
-    }
-    #darkModeBtn {
-        display: none;
-    }
-    
-    .hamburgerMenu {
+    header button:first-of-type {
         display: block;
-        z-index: 10;
-        
-        /* position: absolute;
-        right: 4em;
-        top: 4em; */
     }
-
-    .burgerActive {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: var(--black-bg);
-        z-index: 100;
-        margin: 0;
-        flex-direction: column;
-        justify-content: space-between;
-
-        /* transition: all .5s ease; */
-
-        background-color: var(--black-bg); /* Zwarte achtergrondkleur */
-        background-image: 
-            linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
-            linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
-        background-size: 40px 40px; /* Grootte van de grid */
-        background-position: -1px 0;
-    }
-
-    .closeBtn {
-        position: absolute;
-        right: 4em;
-        top: 4em;
-    }
-
-    .closeBtn-dash1 {
-        transform: rotate(45deg) scale(1.2);
-        position: absolute;
-        top: 0; 
-        right: 0;
-    }
-    .closeBtn-dash2 {
-        width: 2em !important;
-        transform: rotate(135deg) scale(1.2);
-        position: absolute;
-        top: 0; 
-        right: 0;
-    }
-    .closeBtn-dash3 {
-        display: none !important;
-    }
-
-
-
 
     .projectContainer {
         width: 100%;
@@ -614,5 +525,6 @@ TODO:
 - Scroll animations toevoegen, geen scrolltrigger!
 
 - Page animations responsive maken
+- Contact hover naar rechts scalen.
 
 */

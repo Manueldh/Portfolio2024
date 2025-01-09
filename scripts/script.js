@@ -20,48 +20,22 @@ function toggleDarkMode() {
     }
 }
 
+let lastScrollTop = 0;
+const header = document.querySelector('header');
 
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-const HamburgerBtn = document.querySelector('.hamburgerMenu')
-let menuOpen = false
-
-HamburgerBtn.addEventListener('click', () => {
-    const header = document.querySelector('header')
-    const dash1 = document.querySelector('.hamburgerMenu span:nth-child(1)')
-    const dash2 = document.querySelector('.hamburgerMenu span:nth-child(2)')
-    const dash3 = document.querySelector('.hamburgerMenu span:nth-child(3)')
-    const nav = document.querySelector('nav')
-    const navUl = document.querySelector('nav ul')
-    const darkModeBtn = document.querySelector('#darkModeBtn')
-
-    if(menuOpen === false){
-        header.classList.add('burgerActive')
-        HamburgerBtn.classList.add('closeBtn')
-        dash1.classList.add('closeBtn-dash1')
-        dash2.classList.add('closeBtn-dash2')
-        dash3.classList.add('closeBtn-dash3')
-        nav.style.display = 'flex'
-        nav.style.opacity = '1'
-        nav.style.transform = 'translateY(0)'
-        navUl.style.display = 'flex'
-        darkModeBtn.style.display = 'block'
-
-        menuOpen = true
-    } else if(menuOpen === true){
-        header.classList.remove('burgerActive')
-        HamburgerBtn.classList.remove('closeBtn')
-        dash1.classList.remove('closeBtn-dash1')
-        dash2.classList.remove('closeBtn-dash2')
-        dash3.classList.remove('closeBtn-dash3')
-        nav.style.opacity = '0'
-        // nav.style.display = 'none'
-        nav.style.transform = 'translateY(-100%)'
-        navUl.style.display = 'none'
-        darkModeBtn.style.display = 'none'
-
-        menuOpen = false
+    if (scrollTop < lastScrollTop) {
+        // Scrolling up
+        header.classList.add('sticky');
+    } else {
+        // Scrolling down
+        header.classList.remove('sticky');
     }
-})
+
+    lastScrollTop = scrollTop;
+});
 
 
 document.addEventListener('DOMContentLoaded', function() { 
