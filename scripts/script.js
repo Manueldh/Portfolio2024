@@ -41,6 +41,7 @@ HamburgerBtn.addEventListener('click', () => {
         dash2.classList.add('closeBtn-dash2')
         dash3.classList.add('closeBtn-dash3')
         nav.style.display = 'flex'
+        nav.style.opacity = '1'
         nav.style.transform = 'translateY(0)'
         navUl.style.display = 'flex'
         darkModeBtn.style.display = 'block'
@@ -52,7 +53,8 @@ HamburgerBtn.addEventListener('click', () => {
         dash1.classList.remove('closeBtn-dash1')
         dash2.classList.remove('closeBtn-dash2')
         dash3.classList.remove('closeBtn-dash3')
-        nav.style.display = 'none'
+        nav.style.opacity = '0'
+        // nav.style.display = 'none'
         nav.style.transform = 'translateY(-100%)'
         navUl.style.display = 'none'
         darkModeBtn.style.display = 'none'
