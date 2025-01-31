@@ -6,6 +6,11 @@
     font-family: "Space Grotesk", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 @font-face {
     font-family: "Algem";
     src: 
@@ -30,7 +35,7 @@ body {
     background-image: 
         linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
         linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
-    background-size: 40px 40px; /* Grootte van de grid */
+    background-size: 40px 40px; 
     background-position: -1px 0;
     color: var(--beige);
 }
@@ -113,8 +118,12 @@ header {
     background-image: 
         linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
         linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
-    background-size: 40px 40px; /* Grootte van de grid */
+    background-size: 40px 40px; 
     background-position: -1px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all .5s ease;
 }
 header.sticky {
     position: sticky;
@@ -144,14 +153,12 @@ footer a {
     padding: 0;
     text-transform: none;
     transition: all .5s ease;
+
+    transform: scaleX(1);
 }
 footer a:hover {
     cursor: pointer;
-    transform: scale(1.05);
-}
-footer span {
-    text-decoration: underline;
-    text-underline-offset: .3em;
+    transform: scaleX(.95);
 }
 
 .linkIcon {
@@ -217,7 +224,7 @@ a{
     background-image: 
         linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
         linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
-    background-size: 40px 40px; /* Grootte van de grid */
+    background-size: 40px 40px; 
     background-position: -1px 0;
 }
 #loader-logo {
@@ -248,7 +255,7 @@ a{
     background-image: 
         linear-gradient(rgba(78, 78, 78, 0.3) 1px, transparent 1px), 
         linear-gradient(90deg, rgb(78, 78, 78, 0.3) 1px, transparent 1px);
-    background-size: 40px 40px; /* Grootte van de grid */
+    background-size: 40px 40px; 
     background-position: -1px 0;
 }
 
@@ -308,7 +315,6 @@ a{
 }
 
 .about p {
-    /* font-size: 3em; */
     font-size: clamp(1.5rem, 3.8585vw + .3473rem, 3rem);
     z-index: 2;
 }
@@ -384,7 +390,7 @@ a{
 }
 .projectContainer img {
     width: 100%;
-    border-radius: .5em;
+    border-radius: .25em;
     object-fit: cover;
 }
 .projectIntro {
@@ -426,6 +432,18 @@ a{
 .imgContainer img:nth-child(3){
     grid-area: 2 / 2 / 3 / 3;
 }
+.imgContainer2 {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    margin: 10em 0;
+}
+.imgContainer2 img {
+    width: 50%;
+    border-radius: .5em;
+    object-fit: cover;
+}
+
 .projecten {
     padding-top: 10em;
 }
@@ -436,6 +454,21 @@ a{
     font-size: clamp(1.25rem, 5.1447vw + .463rem, 3rem);
     text-align: center;
 }
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100px);
+    transition: all .75s ease;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+
 
 @media screen and (max-width: 1100px) {
     .hero, .projects, .about, footer, header {
@@ -509,22 +542,8 @@ a{
 @media screen and (min-width: 1100px) {
     .interactiveDot:hover + .interactiveCard,
     .interactiveCard:hover {
-    visibility: visible;
-    z-index: 15;
-    transform: translate(-50%, -50%) scale(1);
+        visibility: visible;
+        z-index: 15;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
-}
-
-/* 
-TODO: 
-
-- Transition op menu
-- Menutekst groter maken bij hamburgervariant 
-
-- Responsive projecten pagina (let op font-size die nog niet clamp zijn (p, speciale h2))
-- Scroll animations toevoegen, geen scrolltrigger!
-
-- Page animations responsive maken
-- Contact hover naar rechts scalen.
-
-*/

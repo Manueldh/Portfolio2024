@@ -28,14 +28,29 @@ window.addEventListener('scroll', function() {
 
     if (scrollTop < lastScrollTop) {
         // Scrolling up
-        header.classList.add('sticky');
+        // header.classList.add('sticky');
+        header.style.opacity = 1;
     } else {
         // Scrolling down
-        header.classList.remove('sticky');
+        // header.classList.remove('sticky');
+        header.style.opacity = 0;
     }
 
     lastScrollTop = scrollTop;
 });
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+})
+
+const hiddenElements = document.querySelectorAll('.hidden')
+hiddenElements.forEach((el) => observer.observe(el))
 
 
 document.addEventListener('DOMContentLoaded', function() { 
@@ -48,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let pageX = e.pageX - (window.innerWidth / 2);
             let pageY = e.pageY - (window.innerHeight / 2);
             let newvalueX = width * pageX * -1 - 25;
-            let newvalueY = height * pageY * -1 - 50 + 100;
+            let newvalueY = height * pageY * -1 - 50 + 200;
             container.querySelector('.interactiveCard img').style.transform = "translate(" + newvalueX + "px, " + newvalueY + "px)";
         });
     });

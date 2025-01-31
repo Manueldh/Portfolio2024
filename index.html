@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Portfolio - Manuel den Hartog - Home</title>
     <link rel="stylesheet" href="./styles/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/wgy2bzw.css">
+    <link rel="icon" href="./images/favicon.jpg">
 </head>
 <body class="isLoading" data-theme="dark">
     <div class="loader">
@@ -48,26 +49,46 @@
                 <p>Hi, ik ben Manuel. Een frontend developer met een passie voor digitaal ontwerp.</p>
             </section>
 
-            <section class="projects">
-                <h3>Projecten</h3>
+            <section class="projects" style="margin-bottom: 10em;">
+                <h3>Code Projecten</h3>
                 <ul>
-                    <li><a href="partnerup.html">
+                    <li class="hidden"><a target="_blank" href="https://github.com/Manueldh/Rijkmuseum-rebuild">
+                        <h2>Rijksmuseum Homepage Rebuild</h2>
+                        <img class="project-img" src="./images/rijksmuseum-rebuild.jpg" alt="">
+                        <h3>HTML, CSS, JS</h3>
+                    </a></li>
+                    <li class="hidden"><a target="_blank" href="https://github.com/Manueldh/Top5Music">
+                        <h2>Muziek Showcase 2024</h2>
+                        <img class="project-img" src="./images/muziekshowcase.jpg" alt="">
+                        <h3>React</h3>
+                    </a></li>
+                    <li class="hidden"><a target="_blank" href="https://github.com/Manueldh/TODO-App">
+                        <h2>To-Do App</h2>
+                        <img class="project-img" src="./images/todo-app.jpg" alt="">
+                        <h3>HTML, CSS, JS, Firebase</h3>
+                    </a></li>
+                </ul>
+            </section>
+
+            <section class="projects">
+                <h3>Design Projecten</h3>
+                <ul>
+                    <li class="hidden"><a href="partnerup.html">
                         <h2>Huwelijken redden met een app</h2>
                         <img class="project-img" src="./images/partnerup-project.jpg" alt="">
                         <h3>Branding, Concept, UI/UX</h3>
                     </a></li>
-                    <li><a href="#">
+                    <li class="hidden"><a href="dynamo.html">
                         <h2>Bordspel voor de voetbal community</h2>
                         <img class="project-img" src="./images/voetbal-bordspel.jpg" alt="">
                         <h3>Branding, Concept, Graphic Design</h3>
                     </a></li>
-                    
                 </ul>
             </section>
 
             <section class="about">
                 <h3>About</h3>
-                <div>
+                <div class="hidden">
                     <p>Hi, ik ben Manuel. Ik vind het erg leuk om mij bezig te houden met coderen en oplossingen te vinden voor complexe creatieve ideeën. In mijn vrije tijd ben ik op het moment gitaar 
                         <span class="interactiveContainer">
                             <span id="firstDot" class="interactiveDot"></span>
@@ -79,7 +100,7 @@
                         <span class="interactiveContainer">
                             <span id="secondDot" class="interactiveDot"></span>
                             <span class="interactiveCard">
-                                <img src="./images/gaming-placeholder.jpg" alt="">
+                                <img src="./images/gaming.jpg" alt="">
                             </span>
                         </span>
                     en luister ik graag naar muziek.
@@ -97,11 +118,20 @@
 
         <footer>
             <h3>Contact</h3>
-            <a href="mailto:info@manueldenhartog.nl">
-                <h4>Je kunt me bereiken op <span>info@manueldenhartog.nl</span><span><svg class="linkIcon" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="hidden" href="mailto:info@manueldenhartog.nl">
+                <h4><span>info@manueldenhartog.nl</span><span><svg class="linkIcon" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 6.5V10.5H4V32.5H26V22.5H30V34.5C30 35.0304 29.7893 35.5391 29.4142 35.9142C29.0391 36.2893 28.5304 36.5 28 36.5H2C1.46957 36.5 0.960859 36.2893 0.585786 35.9142C0.210714 35.5391 0 35.0304 0 34.5V8.5C0 7.96957 0.210714 7.46086 0.585786 7.08579C0.960859 6.71071 1.46957 6.5 2 6.5H14ZM36 0.5V16.5H32V7.326L16.414 22.914L13.586 20.086L29.17 4.5H20V0.5H36Z"/>
                 </svg> </span></h4>
-                   
+            </a>
+            <a class="hidden" target="_blank" href="https://www.linkedin.com/in/manuel-den-hartog/">
+                <h4>LinkedIn<span><svg class="linkIcon" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 6.5V10.5H4V32.5H26V22.5H30V34.5C30 35.0304 29.7893 35.5391 29.4142 35.9142C29.0391 36.2893 28.5304 36.5 28 36.5H2C1.46957 36.5 0.960859 36.2893 0.585786 35.9142C0.210714 35.5391 0 35.0304 0 34.5V8.5C0 7.96957 0.210714 7.46086 0.585786 7.08579C0.960859 6.71071 1.46957 6.5 2 6.5H14ZM36 0.5V16.5H32V7.326L16.414 22.914L13.586 20.086L29.17 4.5H20V0.5H36Z"/>
+                </svg></span></h4>
+            </a>
+            <a class="hidden" target="_blank" href="https://github.com/Manueldh">
+                <h4>GitHub<span><svg class="linkIcon" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 6.5V10.5H4V32.5H26V22.5H30V34.5C30 35.0304 29.7893 35.5391 29.4142 35.9142C29.0391 36.2893 28.5304 36.5 28 36.5H2C1.46957 36.5 0.960859 36.2893 0.585786 35.9142C0.210714 35.5391 0 35.0304 0 34.5V8.5C0 7.96957 0.210714 7.46086 0.585786 7.08579C0.960859 6.71071 1.46957 6.5 2 6.5H14ZM36 0.5V16.5H32V7.326L16.414 22.914L13.586 20.086L29.17 4.5H20V0.5H36Z"/>
+                </svg></span></h4>
             </a>
         </footer>
     </div>

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     interactiveDots.forEach(dot => {
         dot.addEventListener('click', function() {
-            const card = dot.nextElementSibling; // Veronderstelt dat .interactiveCard direct na .interactiveDot komt
+            const card = dot.nextElementSibling;
             if (card && card.classList.contains('interactiveCard')) {
                 card.style.visibility = 'visible';
                 card.style.zIndex = 15;
@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
+const heightWidth = document.querySelector('.hero').clientHeight + document.querySelector('.hero').clientWidth + 'px'
+console.log(heightWidth)
 
 const hasVisitedHome = sessionStorage.getItem('hasVisitedHome');
 
