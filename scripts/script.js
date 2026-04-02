@@ -1,6 +1,36 @@
 const body = document.querySelector('body')
 const darkModeBtn = document.querySelector('#darkModeBtn')
 
+const currentPath = window.location.pathname
+const isEnglishPage = currentPath.includes('/en/')
+const currentFileName = currentPath.endsWith('/') ? 'index.html' : (currentPath.split('/').pop() || 'index.html')
+
+document.documentElement.lang = isEnglishPage ? 'en' : 'nl'
+
+function injectLanguageSwitch() {
+    const header = document.querySelector('header')
+
+    if (!header || !darkModeBtn || document.querySelector('.language-switch')) {
+        return
+    }
+
+    const languageSwitch = document.createElement('div')
+    languageSwitch.className = 'language-switch'
+
+    const nlHref = isEnglishPage ? `../${currentFileName}` : `./${currentFileName}`
+    const enHref = isEnglishPage ? `./${currentFileName}` : `./en/${currentFileName}`
+
+    languageSwitch.innerHTML = `
+        <a class="language-switch__link${isEnglishPage ? '' : ' is-active'}" href="${nlHref}" aria-current="${isEnglishPage ? 'false' : 'page'}">NL</a>
+        <span class="language-switch__separator">|</span>
+        <a class="language-switch__link${isEnglishPage ? ' is-active' : ''}" href="${enHref}" aria-current="${isEnglishPage ? 'page' : 'false'}">ENG</a>
+    `
+
+    header.insertBefore(languageSwitch, darkModeBtn)
+}
+
+injectLanguageSwitch()
+
 darkModeBtn.addEventListener('click', toggleDarkMode)
 
 const savedTheme = localStorage.getItem('data-theme')

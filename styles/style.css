@@ -140,6 +140,38 @@ header button {
     width: 4em;
 }
 
+.language-switch {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: .08em;
+}
+
+.language-switch__link {
+    padding: .5rem 0;
+    opacity: .55;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.language-switch__link:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.language-switch__link.is-active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.language-switch__separator {
+    opacity: .35;
+    user-select: none;
+}
+
 header button:first-of-type {
     display: none;
 }
@@ -598,6 +630,10 @@ a {
 
     header {
         justify-content: space-between;
+    }
+
+    .language-switch {
+        padding-right: .5rem;
     }
 
     header button:first-of-type {

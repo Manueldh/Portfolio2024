@@ -34,4 +34,10 @@ tl
     ease: Power4.easeInOut,
 })
 
+const hero = document.querySelector('.hero')
+if (hero) {
+     const heightWidth = hero.clientHeight + hero.clientWidth + 'px'
+     console.log(heightWidth)
+}
+
 
