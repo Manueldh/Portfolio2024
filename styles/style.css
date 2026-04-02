@@ -509,7 +509,6 @@ a {
     width: fit-content;
     position: relative;
     border-bottom: 1px solid currentColor;
-    color: #d1d6ff;
 }
 .textContainer a::after {
     content: " →";
