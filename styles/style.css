@@ -646,6 +646,67 @@ a {
     }
 }
 
+/* Language Switcher */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.language-switcher a,
+.language-switcher span {
+    padding: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.lang-active {
+    cursor: default;
+    color: var(--beige);
+    text-transform: uppercase;
+}
+
+.lang-separator {
+    color: var(--beige);
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+.lang-link {
+    color: var(--beige);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    text-transform: uppercase;
+}
+
+.lang-link:hover {
+    opacity: 1;
+}
+
+#darkModeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#darkModeBtn svg {
+    display: block;
+}
+
 @media screen and (min-width: 1100px) {
 
     .interactiveDot:hover+.interactiveCard,
