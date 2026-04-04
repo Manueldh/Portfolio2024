@@ -225,11 +225,6 @@ a {
     fill: var(--beige);
 }
 
-#backBtn {
-    height: 2em;
-    fill: var(--beige);
-}
-
 .hero {
     display: flex;
     flex-direction: column;
